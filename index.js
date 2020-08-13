@@ -32,39 +32,6 @@ const expect = function (value) {
   }  
 }
 
-
-
-// const it = function(description, testCallback) {
-
-  
-  
-  
-//   console.log(description);
-
-//   const toEqual = function(input) {
-//     if (this === input) {
-//       return true
-//     } else {
-//       return false
-//     }
-//   }
-
-//   //const result = testCallback();
-
-//   //let expectResult = expect(testCallback);
-//   //console.log("it -> expectResult", expectResult)
-  
-//   testCallback();
-  
-
-// }
-
-// it('should return 4', () => {
-//   //simpleMath()
-//   let result = expect(4).toEqual(4)
-//   console.log(result);
-// })
-
 const simpleMath = function() {
   return 2 + 2
 }
