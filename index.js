@@ -5,40 +5,50 @@
 2. It, an individual test for the suite.
 
 3. Expect, what we anticipate the output of a function will be.
+  A function that returns an object with methods to call on the value given
 
 4. Matching (validation, assertion, other words),  the comparitor that tests if the function outputs 
 what you think it should
 
 */
 
-const printGoodResult = function(expected, value) {
-  console.log(`Success: expected ${expected} to equal ${value}`)
-}
-
-const printBadResult = function(expected, value) {
-  console.log(`Fail: expected ${value} to equal ${expected}`)
-}
-
-
 const expect = function (value) {
   return {
-    toEqual: function(expected) {
-      if(value === expected) {
-        printGoodResult(expected, value);
+    toEqual: function (expected) {
+      if (value === expected) {
+        console.log(`Success: expected ${expected} to equal ${value}`);
       } else {
-        printBadResult(expected, value);
+        console.log(`Fail: expected ${value} to equal ${expected}`);
+      }
+    },
+    toNotEqual: function (expected) {
+      if (value !== expected) {
+        console.log(`Success: expected ${expected} to !equal ${value}`);
+      } else {
+        console.log(`Fail: expected ${value} to equal ${expected}`);
+      }
+    },
+    toBeDefined: function () {
+      if (value) {
+        console.log(`Success, is defined as: ${value}`);
+      } else {
+        console.log(`Fail: returned as ${value}`)
       }
     }
-  }  
-}
+  };
+};
 
-const simpleMath = function() {
-  return 2 + 2
-}
+const simpleMath = function () {
+  return 2 + 2;
+};
 
-const myName = function() {
-  const name = "Daniel";
+const myName = function () {
+  const name = 'Daniel';
   return name;
-}
+};
 
-expect(myName()).toEqual("Daniel");
+let nomad;
+
+expect(myName()).toEqual('Daniel');
+
+expect(nomad).toBeDefined();
