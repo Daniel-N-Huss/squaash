@@ -2,7 +2,7 @@
   "name": "squaash",
   "version": "0.0.1",
   "description": "A custom testing library for JS",
-  "main": "index.js",
+  "bin": { "squaash" : "./lib/cli/cli.js" },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
